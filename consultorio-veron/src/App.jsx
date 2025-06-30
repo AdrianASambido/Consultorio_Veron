@@ -15,6 +15,10 @@ const GlobalStyle = createGlobalStyle`
     min-height: 100vh;
     width: 100vw;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 `;
 
@@ -33,12 +37,12 @@ const LogoImg = styled.img`
 `;
 
 const MainLayout = styled.div`
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 10px 0 10px;
+  width: 100vw;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 `;
 
 const ContentBox = styled.div`
@@ -49,7 +53,11 @@ const ContentBox = styled.div`
   margin-top: 0;
   margin-bottom: 30px;
   width: 100%;
-  max-width: 900px;
+  max-width: 1100px;
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const TopSection = styled.div`
@@ -59,10 +67,12 @@ const TopSection = styled.div`
   margin-bottom: 30px;
   align-items: flex-start;
   justify-content: center;
+  width: 100%;
 `;
 
 const CarouselWrapper = styled.div`
   flex: 2 1 400px;
+  min-width: 320px;
 `;
 
 const SideBar = styled.div`
@@ -70,6 +80,7 @@ const SideBar = styled.div`
   display: flex;
   flex-direction: column;
   gap: 18px;
+  min-width: 220px;
 `;
 
 function App() {
@@ -77,7 +88,7 @@ function App() {
     <>
       <GlobalStyle />
       <LogoBox>
-        <LogoImg src="/images/logo.png" alt="Logo Consultorio" />
+        <LogoImg src="/images/logo_consultorio.jpeg" alt="Logo Consultorio" />
       </LogoBox>
       <MainLayout>
         <ContentBox>
