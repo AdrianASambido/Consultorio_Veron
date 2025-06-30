@@ -28,10 +28,11 @@ const LogoBox = styled.div`
   align-items: center;
   margin-top: 32px;
   margin-bottom: 18px;
+  width: 100%;
 `;
 
 const LogoImg = styled.img`
-  width: 140px;
+  width: 340px;
   max-width: 90vw;
   height: auto;
 `;
