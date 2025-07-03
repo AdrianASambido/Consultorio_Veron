@@ -5,8 +5,11 @@ import ClientInfo from './components/ClientInfo';
 import Services from './components/Services';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import HeaderInfo from './components/HeaderInfo';
 import styled, { createGlobalStyle } from 'styled-components';
-
+/*esto modifica todo el cuerpo del html/ 
+* Centra todo (por display: flex, align-items: center, justify-content: center).
+* Podés sacar eso si querés que el logo quede a la izquierda en lugar de centrado.*/
 const GlobalStyle = createGlobalStyle`
   body {
     background: #f4f8fb;
@@ -21,22 +24,23 @@ const GlobalStyle = createGlobalStyle`
     justify-content: center;
   }
 `;
-
+/*modifica el logo */
 const LogoBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 32px;
-  margin-bottom: 18px;
+  margin: 0 auto 18px auto;
   width: 100%;
+  max-width: 1100px;
+  box-sizing: border-box;
 `;
-
+/*modifica el tamaño del logo */
 const LogoImg = styled.img`
-  width: 340px;
-  max-width: 90vw;
+  width: 100%;
+  max-height: 230px;
   height: auto;
 `;
-
+/*modifica el contenedor principal de toda la app.*/
 const MainLayout = styled.div`
   width: 100vw;
   min-height: 100vh;
@@ -45,7 +49,7 @@ const MainLayout = styled.div`
   align-items: center;
   justify-content: center;
 `;
-
+/*modifica l cuadro blanco principal (donde está el carrusel, video, servicios, etc.)*/
 const ContentBox = styled.div`
   background: #fff;
   border-radius: 18px;
@@ -60,7 +64,7 @@ const ContentBox = styled.div`
   flex-direction: column;
   align-items: center;
 `;
-
+/*modifica la fila que tiene el carrucel y los videos (lado a lado del descktop) */
 const TopSection = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -70,7 +74,7 @@ const TopSection = styled.div`
   justify-content: center;
   width: 100%;
 `;
-
+/*modifica el espacio que ocupa el carrucel*/
 const CarouselWrapper = styled.div`
   flex: 2 1 400px;
   min-width: 320px;
@@ -88,6 +92,7 @@ function App() {
   return (
     <>
       <GlobalStyle />
+      <HeaderInfo />
       <LogoBox>
         <LogoImg src="/images/logo_consultorio.jpeg" alt="Logo Consultorio" />
       </LogoBox>
