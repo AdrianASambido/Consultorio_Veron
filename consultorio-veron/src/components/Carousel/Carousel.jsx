@@ -1,18 +1,18 @@
-import React, { useEffect, useState, useMemo } from 'react';
+import React from 'react';
 import styled from 'styled-components';
+import { useCarousel } from '../../hooks/useCarousel';
+import { CAROUSEL_CONFIG, COLORS } from '../../utils/constants';
+import { getCarouselImages } from '../../utils/assets';
 
-// Importa todas las imágenes de la carpeta images excepto el logo
-const imageModules = import.meta.glob('/public/images/*.{jpg,jpeg,png,gif,webp}', { eager: true });
-const images = Object.keys(imageModules)
-  .filter(path => !path.includes('logo'))
-  .map(path => path.replace('/public', ''));
+// Obtiene las imágenes del carrusel
+const images = getCarouselImages();
 
 const CarouselContainer = styled.div`
   width: 100%;
-  height: 250px;
+  height: ${CAROUSEL_CONFIG.HEIGHT}px;
   overflow: hidden;
   position: relative;
-  background: #fff;
+  background: ${COLORS.WHITE};
 `;
 
 const Slide = styled.img`
@@ -29,8 +29,8 @@ const Slide = styled.img`
 const Placeholder = styled.div`
   width: 100%;
   height: 100%;
-  background: #e0e0e0;
-  color: #888;
+  background: ${COLORS.GRAY};
+  color: ${COLORS.TEXT_GRAY};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -55,31 +55,24 @@ const Dot = styled.button`
   height: 10px;
   border-radius: 50%;
   border: none;
-  background: ${props => (props.active ? '#1a3c5a' : '#ccc')};
+  background: ${props => (props.active ? COLORS.PRIMARY : COLORS.LIGHT_GRAY)};
   cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background: ${props => (props.active ? COLORS.PRIMARY : '#999')};
+  }
 `;
 
 const Carousel = () => {
-  const [current, setCurrent] = useState(0);
-  const [error, setError] = useState(Array(images.length).fill(false));
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % images.length);
-    }, 6000);
-    return () => clearInterval(interval);
-  }, [images.length]);
-
-  const handleError = idx => {
-    setError(prev => {
-      const copy = [...prev];
-      copy[idx] = true;
-      return copy;
-    });
-  };
+  const { current, error, handleError, goToSlide } = useCarousel(images);
 
   if (images.length === 0) {
-    return <CarouselContainer><Placeholder active>Sin imágenes</Placeholder></CarouselContainer>;
+    return (
+      <CarouselContainer>
+        <Placeholder active>Sin imágenes</Placeholder>
+      </CarouselContainer>
+    );
   }
 
   return (
@@ -101,7 +94,11 @@ const Carousel = () => {
       )}
       <Dots>
         {images.map((_, idx) => (
-          <Dot key={idx} active={idx === current} onClick={() => setCurrent(idx)} />
+          <Dot 
+            key={idx} 
+            active={idx === current} 
+            onClick={() => goToSlide(idx)} 
+          />
         ))}
       </Dots>
     </CarouselContainer>

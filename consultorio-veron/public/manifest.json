@@ -1,0 +1,27 @@
+{
+  "name": "Consultorio Verón",
+  "short_name": "Consultorio Verón",
+  "description": "Servicios de evaluación física y rendimiento deportivo",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f4f8fb",
+  "theme_color": "#1a3c5a",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/images/logo_Solo.jpeg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/logo_consultorio.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["health", "sports", "medical"],
+  "lang": "es",
+  "dir": "ltr"
+} 
