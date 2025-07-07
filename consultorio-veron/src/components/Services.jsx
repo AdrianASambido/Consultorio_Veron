@@ -22,10 +22,10 @@ const Services = () => (
   <Section>
     <Title>Servicios</Title>
     <List>
-      <li>Rehabilitación de lesiones musculares</li>
-      <li>Readaptación física y funcional</li>
+      <li>Entrenamientos orientados al rendimiento</li>
+      <li>Readaptación físico funcional deportiva </li>
       <li>Evaluación y seguimiento personalizado</li>
-      <li>Entrenamiento preventivo</li>
+      <li>Entrenamiento preventivo orientado a la salud,</li>
       <li>Asesoramiento en actividad física</li>
     </List>
   </Section>

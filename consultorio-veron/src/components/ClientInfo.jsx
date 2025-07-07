@@ -40,12 +40,12 @@ const Especialidad = styled.p`
 `;
 
 const ClientInfo = () => (
-  <InfoBox>
+  <InfoBox id="quienes-somos">
     <Photo src="/images/ejemplo3.jpg" alt="Foto cliente" />
     <Name>Profesor Patricio Verón</Name>
-    <Matricula>Matrícula: 12345</Matricula>
-    <Especialidad>Especialista en Rehabilitación y Readaptación</Especialidad>
+    <Matricula>Matrícula: 11111</Matricula>
+    <Especialidad>Especialista en Readaptación físico deportiva</Especialidad>
   </InfoBox>
 );
 
-export default ClientInfo; 
+export default ClientInfo;
