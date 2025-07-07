@@ -30,8 +30,8 @@ const LogoBox = styled.div`
   justify-content: center;
   align-items: center;
   margin: 0 auto 18px auto;
-  width: 100%;
-  max-width: 1100px;
+  width: 110%;
+  max-width: 1110px;
   box-sizing: border-box;
 `;
 /*modifica el tamaño del logo */
