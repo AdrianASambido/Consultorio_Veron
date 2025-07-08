@@ -30,17 +30,15 @@ const LogoBox = styled.div`
   justify-content: center;
   align-items: center;
   margin: 0 auto 18px auto;
-  width: 100%;
-  max-width: 400px;
+  width: 110%;
+  max-width: 1110px;
   box-sizing: border-box;
 `;
 /*modifica el tamaño del logo */
 const LogoImg = styled.img`
   width: 100%;
-  max-width: 400px;
   max-height: 230px;
   height: auto;
-  object-fit: contain;
 `;
 /*modifica el contenedor principal de toda la app.*/
 const MainLayout = styled.div`
@@ -49,10 +47,9 @@ const MainLayout = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  overflow-x: hidden;
+  justify-content: center;
 `;
-/*modifica l cuadro blanco principal (donde está el carrusel, video, servicios, etc.)*/
+/*modifica el cuadro blanco principal (donde está el carrusel, video, servicios, etc.)*/
 const ContentBox = styled.div`
   background: #fff;
   border-radius: 18px;
@@ -79,17 +76,15 @@ const TopSection = styled.div`
 `;
 /*modifica el espacio que ocupa el carrucel*/
 const CarouselWrapper = styled.div`
-  flex: 2 1 400px;
-  min-width: 320px;
+  width: 100%;
 `;
 
 const SideBar = styled.div`
-  flex: 1 1 220px;
   display: flex;
   flex-direction: column;
   gap: 18px;
-  min-width: 220px;
-  margin-top: 0;
+  margin-top: 30px;
+  width: 100%;
   align-items: center;
 `;
 
@@ -107,11 +102,11 @@ function App() {
             <CarouselWrapper>
               <Carousel />
             </CarouselWrapper>
-            <SideBar>
-              <ClientInfo />
-              <VideoPreview />
-            </SideBar>
           </TopSection>
+          <SideBar>
+            <ClientInfo />
+            <VideoPreview />
+          </SideBar>
           <Services />
           <Contact />
         </ContentBox>
