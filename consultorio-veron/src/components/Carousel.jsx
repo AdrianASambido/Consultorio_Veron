@@ -9,7 +9,7 @@ const images = Object.keys(imageModules)
 
 const CarouselContainer = styled.div`
   width: 100%;
-  height: 250px;
+  height: 325px;
   overflow: hidden;
   position: relative;
   background: #fff;
@@ -108,4 +108,4 @@ const Carousel = () => {
   );
 };
 
-export default Carousel; 
+export default Carousel;

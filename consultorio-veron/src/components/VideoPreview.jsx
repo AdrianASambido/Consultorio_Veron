@@ -8,13 +8,20 @@ const videos = Object.keys(videoModules).map(path => ({
   type: `video/${path.split('.').pop()}`
 }));
 
+const VideoContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+`;
+
 const VideoThumb = styled.video`
-  width: 120px;
-  height: 80px;
+  width: 30%;
+  height: auto;
   margin: 10px 0;
   cursor: pointer;
   border-radius: 8px;
   border: 2px solid #1a3c5a;
+  object-fit: cover;
 `;
 
 const VideoPlaceholder = styled.div`
@@ -96,7 +103,7 @@ const VideoPreview = () => {
   }
 
   return (
-    <div>
+    <VideoContainer>
       {videos.map((video, idx) =>
         error[idx] ? (
           <VideoPlaceholder key={video.src}>
@@ -133,8 +140,8 @@ const VideoPreview = () => {
           )}
         </ModalOverlay>
       )}
-    </div>
+    </VideoContainer>
   );
 };
 
-export default VideoPreview; 
+export default VideoPreview;

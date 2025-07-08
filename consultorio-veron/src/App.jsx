@@ -30,15 +30,17 @@ const LogoBox = styled.div`
   justify-content: center;
   align-items: center;
   margin: 0 auto 18px auto;
-  width: 110%;
-  max-width: 1110px;
+  width: 100%;
+  max-width: 400px;
   box-sizing: border-box;
 `;
 /*modifica el tamaño del logo */
 const LogoImg = styled.img`
   width: 100%;
+  max-width: 400px;
   max-height: 230px;
   height: auto;
+  object-fit: contain;
 `;
 /*modifica el contenedor principal de toda la app.*/
 const MainLayout = styled.div`
@@ -47,7 +49,8 @@ const MainLayout = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  overflow-x: hidden;
 `;
 /*modifica l cuadro blanco principal (donde está el carrusel, video, servicios, etc.)*/
 const ContentBox = styled.div`
@@ -86,6 +89,8 @@ const SideBar = styled.div`
   flex-direction: column;
   gap: 18px;
   min-width: 220px;
+  margin-top: 0;
+  align-items: center;
 `;
 
 function App() {

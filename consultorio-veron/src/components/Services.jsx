@@ -1,11 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
+import Tabs from './Tabs';
 
 const Section = styled.section`
   background: #eaf2fa;
   border-radius: 10px;
   padding: 24px 18px;
   margin: 20px 0;
+  width: 100%;
+  color: #000;
 `;
 
 const Title = styled.h2`
@@ -13,22 +16,34 @@ const Title = styled.h2`
   margin-bottom: 12px;
 `;
 
-const List = styled.ul`
-  padding: 0 0 0 18px;
-  color: #222;
-`;
+const services = [
+  {
+    title: 'Rendimiento',
+    content: 'Entrenamientos orientados al rendimiento',
+  },
+  {
+    title: 'Readaptación',
+    content: 'Readaptación físico funcional deportiva',
+  },
+  {
+    title: 'Evaluación',
+    content: 'Evaluación y seguimiento personalizado',
+  },
+  {
+    title: 'Prevención',
+    content: 'Entrenamiento preventivo orientado a la salud',
+  },
+  {
+    title: 'Asesoramiento',
+    content: 'Asesoramiento en actividad física',
+  },
+];
 
 const Services = () => (
   <Section>
     <Title>Servicios</Title>
-    <List>
-      <li>Entrenamientos orientados al rendimiento</li>
-      <li>Readaptación físico funcional deportiva </li>
-      <li>Evaluación y seguimiento personalizado</li>
-      <li>Entrenamiento preventivo orientado a la salud,</li>
-      <li>Asesoramiento en actividad física</li>
-    </List>
+    <Tabs items={services} />
   </Section>
 );
 
-export default Services; 
+export default Services;
