@@ -10,6 +10,7 @@ const TabButtons = styled.div`
   justify-content: center;
   gap: 15px;
   border-bottom: 2px solid #ccc;
+  padding-bottom: 2px;
 `;
 
 const TabButton = styled.button`

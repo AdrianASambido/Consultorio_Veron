@@ -11,7 +11,7 @@ const CarouselContainer = styled.div`
   width: 100%;
   overflow: hidden;
   position: relative;
-  background: #fff;
+  background: #eaf2fa;
 `;
 
 const SlidesWrapper = styled.div`

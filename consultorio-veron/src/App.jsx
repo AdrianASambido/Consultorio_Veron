@@ -6,6 +6,8 @@ import Services from './components/Services';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import HeaderInfo from './components/HeaderInfo';
+import Location from './components/Location';
+import Professor from './components/Professor';
 import styled, { createGlobalStyle } from 'styled-components';
 /*esto modifica todo el cuerpo del html/ 
 * Centra todo (por display: flex, align-items: center, justify-content: center).
@@ -88,6 +90,18 @@ const SideBar = styled.div`
   align-items: center;
 `;
 
+const InfoSection = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  width: 100%;
+  margin-top: 30px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
 function App() {
   return (
     <>
@@ -108,6 +122,10 @@ function App() {
             <VideoPreview />
           </SideBar>
           <Services />
+          <InfoSection>
+            <Location />
+            <Professor />
+          </InfoSection>
           <Contact />
         </ContentBox>
         <Footer />
