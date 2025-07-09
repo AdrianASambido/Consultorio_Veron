@@ -14,12 +14,21 @@ const Section = styled.section`
 const Title = styled.h2`
   color: #1a3c5a;
   margin-bottom: 12px;
+  text-align: center;
+  font-size: 2.5rem;
+`;
+
+const Subtitle = styled.p`
+  text-align: center;
+  margin-bottom: 24px;
+  font-size: 1.1rem;
+  color: #555;
 `;
 
 const services = [
   {
     title: 'Rendimiento',
-    content: 'Entrenamientos orientados al rendimiento',
+    content: 'Entrenamientos orientados a estimular tu potencial y elevar tu rendimiento ',
   },
   {
     title: 'Readaptación',
@@ -33,15 +42,12 @@ const services = [
     title: 'Prevención',
     content: 'Entrenamiento preventivo orientado a la salud',
   },
-  {
-    title: 'Asesoramiento',
-    content: 'Asesoramiento en actividad física',
-  },
 ];
 
 const Services = () => (
   <Section>
-    <Title>Servicios</Title>
+    <Title>Nuestros Servicios</Title>
+    <Subtitle>Descubrí cómo podemos ayudarte con soluciones a medida.</Subtitle>
     <Tabs items={services} />
   </Section>
 );

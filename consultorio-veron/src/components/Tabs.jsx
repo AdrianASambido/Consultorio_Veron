@@ -7,10 +7,13 @@ const TabContainer = styled.div`
 
 const TabButtons = styled.div`
   display: flex;
+  justify-content: space-around;
   border-bottom: 2px solid #ccc;
 `;
 
 const TabButton = styled.button`
+  flex: 1;
+  text-align: center;
   padding: 10px 20px;
   border: none;
   background-color: ${props => (props.active ? '#fff' : '#f0f0f0')};
