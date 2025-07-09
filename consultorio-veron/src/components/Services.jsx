@@ -32,15 +32,15 @@ const services = [
   },
   {
     title: 'Readaptación',
-    content: 'Readaptación físico funcional deportiva',
+    content: 'Físico funcional deportiva, para un retorno seguro a tu actividad deportiva ',
   },
   {
     title: 'Evaluación',
-    content: 'Evaluación y seguimiento personalizado',
+    content: 'Evaluación y seguimiento personalizado para que tenagas la certeza de  tu condición actual',
   },
   {
     title: 'Prevención',
-    content: 'Entrenamiento preventivo orientado a la salud',
+    content: 'Entrenamiento preventivo orientado a la salud y al bienestar, ',
   },
 ];
 

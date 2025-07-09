@@ -7,21 +7,27 @@ const TabContainer = styled.div`
 
 const TabButtons = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 15px;
   border-bottom: 2px solid #ccc;
 `;
 
 const TabButton = styled.button`
-  flex: 1;
   text-align: center;
   padding: 10px 20px;
   border: none;
-  background-color: ${props => (props.active ? '#fff' : '#f0f0f0')};
+  background-color: ${props => (props.active ? '#fff' : 'transparent')};
   cursor: pointer;
   font-size: 16px;
   border-bottom: ${props => (props.active ? '2px solid #1a3c5a' : 'none')};
   margin-bottom: -2px;
   color: #000;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #fff;
+    border-bottom: 2px solid #1a3c5a;
+  }
 `;
 
 const TabContent = styled.div`

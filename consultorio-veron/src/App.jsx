@@ -78,13 +78,13 @@ const TopSection = styled.div`
 const CarouselWrapper = styled.div`
   width: 100%;
 `;
-
+/*Modifica el contenedor de los videos*/
 const SideBar = styled.div`
   display: flex;
   flex-direction: column;
   gap: 18px;
   margin-top: 30px;
-  width: 100%;
+  width: 80%;
   align-items: center;
 `;
 
