@@ -7,7 +7,6 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import HeaderInfo from './components/HeaderInfo';
 import Location from './components/Location';
-import Professor from './components/Professor';
 import styled, { createGlobalStyle } from 'styled-components';
 /*esto modifica todo el cuerpo del html/ 
 * Centra todo (por display: flex, align-items: center, justify-content: center).
@@ -56,7 +55,7 @@ const ContentBox = styled.div`
   background: #fff;
   border-radius: 18px;
   box-shadow: 0 4px 24px rgba(26,60,90,0.10);
-  padding: 32px 18px 18px 18px;
+  padding: 32px;
   margin-top: 0;
   margin-bottom: 30px;
   width: 100%;
@@ -65,6 +64,7 @@ const ContentBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-sizing: border-box;
 `;
 /*modifica la fila que tiene el carrucel y los videos (lado a lado del descktop) */
 const TopSection = styled.div`
@@ -72,7 +72,6 @@ const TopSection = styled.div`
   flex-wrap: wrap;
   gap: 24px;
   margin-bottom: 30px;
-  align-items: flex-start;
   justify-content: center;
   width: 100%;
 `;
@@ -82,20 +81,12 @@ const CarouselWrapper = styled.div`
 `;
 /*Modifica el contenedor de los videos*/
 const SideBar = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  margin-top: 30px;
-  width: 80%;
-  align-items: center;
-`;
-
-const InfoSection = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 24px;
   width: 100%;
   margin-top: 30px;
+  align-items: stretch;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
@@ -117,15 +108,12 @@ function App() {
               <Carousel />
             </CarouselWrapper>
           </TopSection>
+          <Services />
           <SideBar>
             <ClientInfo />
-            <VideoPreview />
-          </SideBar>
-          <Services />
-          <InfoSection>
             <Location />
-            <Professor />
-          </InfoSection>
+          </SideBar>
+          <VideoPreview />
           <Contact />
         </ContentBox>
         <Footer />

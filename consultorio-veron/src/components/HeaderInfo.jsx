@@ -164,6 +164,7 @@ const HeaderInfo = () => {
             <NavLink href="#contacto">Turnos</NavLink>
             <NavLink href="#contacto">Contacto</NavLink>
             <NavLink href="#quienes-somos">Quiénes somos</NavLink>
+            <NavLink href="#ubicacion">Ubicación</NavLink>
           </NavLinks>
           <SocialLinks>
             <SocialIconLink href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">

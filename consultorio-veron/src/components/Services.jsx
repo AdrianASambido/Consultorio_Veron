@@ -5,7 +5,7 @@ import Tabs from './Tabs';
 const Section = styled.section`
   background: #eaf2fa;
   border-radius: 10px;
-  padding: 24px 18px;
+  padding: 12px 18px;
   margin: 20px 0;
   width: 100%;
   color: #000;

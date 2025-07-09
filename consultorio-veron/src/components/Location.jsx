@@ -4,12 +4,13 @@ import styled from 'styled-components';
 const Section = styled.section`
   background: #eaf2fa;
   border-radius: 10px;
-  padding: 24px 18px;
+  padding: 12px 18px;
   width: 100%;
   height: 100%;
   color: #000;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
 `;
 
 const Title = styled.h2`
@@ -34,7 +35,7 @@ const MapFrame = styled.iframe`
 const Location = () => {
   const mapSrc = "https://maps.google.com/maps?q=4%20bis%20entre%20528%20bis%20y%20529%2C%20Tolosa&t=&z=15&ie=UTF8&iwloc=&output=embed";
   return (
-    <Section>
+    <Section id="ubicacion">
       <Title>Ubicación</Title>
       <MapContainer>
         <MapFrame

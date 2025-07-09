@@ -5,11 +5,13 @@ const InfoBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #f4f8fb;
-  border-radius: 12px;
-  padding: 20px 10px;
-  box-shadow: 0 2px 8px rgba(26,60,90,0.08);
-  width: 220px;
+  background: #eaf2fa;
+  border-radius: 10px;
+  padding: 12px 18px;
+  width: 100%;
+  height: 100%;
+  color: #000;
+  box-sizing: border-box;
 `;
 
 const Photo = styled.img`
