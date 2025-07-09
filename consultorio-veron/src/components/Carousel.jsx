@@ -4,7 +4,7 @@ import styled from 'styled-components';
 // Importa todas las imágenes de la carpeta images excepto el logo
 const imageModules = import.meta.glob('/public/images/*.{jpg,jpeg,png,gif,webp}', { eager: true });
 const images = Object.keys(imageModules)
-  .filter(path => !path.includes('logo'))
+  .filter(path => !path.includes('logo') && !path.includes('cara_cliente'))
   .map(path => path.replace('/public', ''));
 
 const CarouselContainer = styled.div`

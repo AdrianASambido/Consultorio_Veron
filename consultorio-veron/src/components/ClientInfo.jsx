@@ -5,6 +5,7 @@ const InfoBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   background: #eaf2fa;
   border-radius: 10px;
   padding: 12px 18px;
@@ -15,8 +16,8 @@ const InfoBox = styled.div`
 `;
 
 const Photo = styled.img`
-  width: 90px;
-  height: 90px;
+  width: 144px;
+  height: 144px;
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid #1a3c5a;
@@ -43,7 +44,7 @@ const Especialidad = styled.p`
 
 const ClientInfo = () => (
   <InfoBox id="quienes-somos">
-    <Photo src="/images/ejemplo3.jpg" alt="Foto cliente" />
+    <Photo src="/images/cara_cliente.jpeg" alt="Foto cliente" />
     <Name>Profesor Patricio Verón</Name>
     <Matricula>Matrícula: 11111</Matricula>
     <Especialidad>Especialista en Readaptación físico deportiva</Especialidad>
