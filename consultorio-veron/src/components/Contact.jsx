@@ -53,19 +53,27 @@ const ErrorMessage = styled.p`
   margin: 0;
 `;
 
+const SuccessMessage = styled.p`
+  color: green;
+  font-weight: bold;
+  text-align: center;
+`;
+
 const Contact = () => {
   const form = useRef();
   const [errors, setErrors] = useState({});
   const [isSent, setIsSent] = useState(false);
+  const [isSending, setIsSending] = useState(false);
+  const [sendError, setSendError] = useState('');
 
   const validate = (name, value) => {
     switch (name) {
-      case 'user_name':
+      case 'name':
         if (!/^[a-zA-Z\s]+$/.test(value)) {
           return 'El nombre solo debe contener letras.';
         }
         break;
-      case 'user_email':
+      case 'email':
         if (!/\S+@\S+\.\S+/.test(value)) {
           return 'El email no es válido.';
         }
@@ -83,11 +91,13 @@ const Contact = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
+    setIsSent(false);
+    setSendError('');
     const currentForm = form.current;
     const newErrors = {};
     let hasErrors = false;
 
-    ['user_name', 'user_email', 'message'].forEach(fieldName => {
+    ['name', 'email', 'message'].forEach(fieldName => {
       const error = validate(fieldName, currentForm[fieldName].value);
       if (error) {
         newErrors[fieldName] = error;
@@ -98,13 +108,19 @@ const Contact = () => {
     setErrors(newErrors);
 
     if (!hasErrors) {
-      emailjs.sendForm('service_YOUR_SERVICE_ID', 'template_YOUR_TEMPLATE_ID', form.current, 'YOUR_USER_ID')
+      setIsSending(true);
+      emailjs.sendForm('service_f5us5e3', 'template_em6d48m', form.current, '1LuijfR8L4qznPf37')
         .then((result) => {
             console.log(result.text);
             setIsSent(true);
             currentForm.reset();
+            setErrors({});
         }, (error) => {
             console.log(error.text);
+            setSendError('Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.');
+        })
+        .finally(() => {
+            setIsSending(false);
         });
     }
   };
@@ -113,18 +129,21 @@ const Contact = () => {
     <Section id="contacto">
       <Title>Contacto</Title>
       <Info>
-        Email: soma.readaptacion@gmail.com - veronpatricio@gmail.com<br />
+        Email: soma.readaptacion@gmail.com<br/>
         Teléfonos: (221) 317-2975 - (221) 319-7336
       </Info>
       <Form ref={form} onSubmit={sendEmail}>
-        <Input type="text" name="user_name" placeholder="Nombre" />
-        {errors.user_name && <ErrorMessage>{errors.user_name}</ErrorMessage>}
-        <Input type="email" name="user_email" placeholder="Email" />
-        {errors.user_email && <ErrorMessage>{errors.user_email}</ErrorMessage>}
+        <Input type="text" name="name" placeholder="Nombre" />
+        {errors.name && <ErrorMessage>{errors.name}</ErrorMessage>}
+        <Input type="email" name="email" placeholder="Email" />
+        {errors.email && <ErrorMessage>{errors.email}</ErrorMessage>}
         <TextArea rows="3" name="message" placeholder="Mensaje" />
         {errors.message && <ErrorMessage>{errors.message}</ErrorMessage>}
-        <Button type="submit">Enviar</Button>
-        {isSent && <p>¡Mensaje enviado con éxito!</p>}
+        <Button type="submit" disabled={isSending}>
+          {isSending ? 'Enviando...' : 'Enviar'}
+        </Button>
+        {isSent && <SuccessMessage>¡Mensaje enviado con éxito!</SuccessMessage>}
+        {sendError && <ErrorMessage>{sendError}</ErrorMessage>}
       </Form>
     </Section>
   );
