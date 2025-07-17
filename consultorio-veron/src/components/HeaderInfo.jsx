@@ -61,7 +61,7 @@ const SocialIconLink = styled.a`
 const HeaderInfo = () => {
   return (
     <NavContainer>
-      <Logo src="/images/logo_Solo.jpeg" alt="Logo" />
+      <Logo src="/imagenes/logo_solo_sin_blanco.png" alt="Logo" />
       <RightNav>
         <NavLinks>
           <NavLink href="#contacto">Turnos</NavLink>
@@ -72,7 +72,7 @@ const HeaderInfo = () => {
           <SocialIconLink href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
             <FaInstagram />
           </SocialIconLink>
-          <SocialIconLink href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+          <SocialIconLink href="https://www.linkedin.com/in/patricio-veron-017479244?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer">
             <FaLinkedin />
           </SocialIconLink>
           <SocialIconLink href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">

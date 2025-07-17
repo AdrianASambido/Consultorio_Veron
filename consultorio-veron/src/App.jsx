@@ -99,7 +99,7 @@ function App() {
       <GlobalStyle />
       <HeaderInfo />
       <LogoBox>
-        <LogoImg src="/images/logo_consultorio.jpeg" alt="Logo Consultorio" />
+        <LogoImg src="/imagenes/logo_consultorio.png" alt="Logo Consultorio" />
       </LogoBox>
       <MainLayout>
         <ContentBox>
