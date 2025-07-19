@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { FaInstagram, FaLinkedin, FaFacebook } from 'react-icons/fa';
 
 const NavContainer = styled.div`
-  background-color: #333;
+  background-color:rgb(37, 108, 146);
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
@@ -46,6 +46,7 @@ const NavLink = styled.a`
 const SocialLinks = styled.div`
   display: flex;
   gap: 15px;
+  padding-right: 20px;
 `;
 
 const SocialIconLink = styled.a`
@@ -61,7 +62,7 @@ const SocialIconLink = styled.a`
 const HeaderInfo = () => {
   return (
     <NavContainer>
-      <Logo src="/imagenes/logo_solo_sin_blanco.png" alt="Logo" />
+      <Logo src="/imagenes/logo_negro_sin_fondo.png" alt="Logo" />
       <RightNav>
         <NavLinks>
           <NavLink href="#contacto">Turnos</NavLink>
@@ -74,9 +75,6 @@ const HeaderInfo = () => {
           </SocialIconLink>
           <SocialIconLink href="https://www.linkedin.com/in/patricio-veron-017479244?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer">
             <FaLinkedin />
-          </SocialIconLink>
-          <SocialIconLink href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-            <FaFacebook />
           </SocialIconLink>
         </SocialLinks>
       </RightNav>

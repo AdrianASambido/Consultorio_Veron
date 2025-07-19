@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import HeaderInfo from './components/HeaderInfo';
 import Location from './components/Location';
 import styled, { createGlobalStyle } from 'styled-components';
+import { FaHeartbeat } from 'react-icons/fa';
 /*esto modifica todo el cuerpo del html/ 
 * Centra todo (por display: flex, align-items: center, justify-content: center).
 * Podés sacar eso si querés que el logo quede a la izquierda en lugar de centrado.*/
@@ -92,15 +93,68 @@ const SideBar = styled.div`
     grid-template-columns: 1fr;
   }
 `;
+// Banner llamativo con gradiente y texto
+const Banner = styled.div`
+  width: 100vw;
+  min-width: 100vw;
+  margin: 0;
+  padding: 60px 0 80px 0;
+  box-sizing: border-box;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #B5E9FC;
+  box-shadow: none;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  @media (max-width: 768px) {
+    padding: 60px 0 40px 0;
+  }
+`;
+const BannerIcon = styled(FaHeartbeat)`
+  color: #3985AF;
+  font-size: 5.5rem;
+  margin-bottom: 32px;
+`;
+const BannerTitle = styled.h1`
+  color: #3985AF;
+  font-size: 3.5rem;
+  font-weight: 900;
+  margin: 0 0 22px 0;
+  text-align: center;
+  letter-spacing: 1.5px;
+  line-height: 1.1;
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  @media (max-width: 768px) {
+    font-size: 2.1rem;
+  }
+`;
+const BannerSubtitle = styled.h2`
+  color: #3985AF;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0;
+  text-align: center;
+  letter-spacing: 0.5px;
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+  }
+`;
 
 function App() {
   return (
     <>
       <GlobalStyle />
       <HeaderInfo />
-      <LogoBox>
-        <LogoImg src="/imagenes/logo_consultorio.png" alt="Logo Consultorio" />
-      </LogoBox>
+      <Banner>
+        <BannerIcon />
+        <BannerTitle>Impulsando tu bienestar físico y mental</BannerTitle>
+        <BannerSubtitle>Evaluaciones, entrenamiento y salud en un solo lugar</BannerSubtitle>
+      </Banner>
       <MainLayout>
         <ContentBox>
           <TopSection>
