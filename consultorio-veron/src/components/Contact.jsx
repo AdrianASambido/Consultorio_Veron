@@ -109,14 +109,24 @@ const Contact = () => {
 
     if (!hasErrors) {
       setIsSending(true);
-      emailjs.sendForm('service_f5us5e3', 'template_em6d48m', form.current, '1LuijfR8L4qznPf37')
-        .then((result) => {
-            console.log(result.text);
+      const templateParams = {
+        name: currentForm.name.value,
+        email: currentForm.email.value,
+        message: currentForm.message.value,
+        reply_to: currentForm.email.value,
+      };
+
+      const notificationPromise = emailjs.send('service_gwu2u2t', 'template_n996u3t', templateParams, '1LuijfR8L4qznPf37');
+      const autoReplyPromise = emailjs.send('service_gwu2u2t', 'template_em6d48m', templateParams, '1LuijfR8L4qznPf37');
+
+      Promise.all([notificationPromise, autoReplyPromise])
+        .then((responses) => {
+            console.log('Emails sent successfully:', responses);
             setIsSent(true);
             currentForm.reset();
             setErrors({});
         }, (error) => {
-            console.log(error.text);
+            console.log('Failed to send emails:', error);
             setSendError('Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.');
         })
         .finally(() => {
@@ -130,7 +140,7 @@ const Contact = () => {
       <Title>Contacto</Title>
       <Info>
         Email: soma.readaptacion@gmail.com<br/>
-        Teléfonos: (221) 317-2975 - (221) 319-7336
+        Teléfonos: (221) 319-7336 - (221) 317-2975 
       </Info>
       <Form ref={form} onSubmit={sendEmail}>
         <Input type="text" name="name" placeholder="Nombre" />

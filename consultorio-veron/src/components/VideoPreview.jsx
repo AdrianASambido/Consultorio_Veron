@@ -14,14 +14,27 @@ const VideoContainer = styled.div`
   width: 100%;
 `;
 
-const VideoThumb = styled.video`
+const ThumbWrapper = styled.div`
   width: 30%;
-  height: auto;
   margin: 10px 0;
-  cursor: pointer;
   border-radius: 8px;
   border: 2px solid #1a3c5a;
+  overflow: hidden;
+  position: relative;
+  /* Assuming 16:9 aspect ratio, new height is 85% of original */
+  /* Original padding-bottom would be 56.25% (9/16) */
+  /* New padding-bottom is 56.25% * 0.85 = 47.8125% */
+  padding-bottom: 47.8125%;
+`;
+
+const VideoThumb = styled.video`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  cursor: pointer;
 `;
 
 const VideoPlaceholder = styled.div`
@@ -110,18 +123,19 @@ const VideoPreview = () => {
             Video no disponible
           </VideoPlaceholder>
         ) : (
-          <VideoThumb
-            key={video.src}
-            src={video.src}
-            type={video.type}
-            muted
-            loop
-            preload="metadata"
-            onMouseOver={e => e.target.play()}
-            onMouseOut={e => e.target.pause()}
-            onClick={() => openModal(idx)}
-            onError={() => handleError(idx)}
-          />
+          <ThumbWrapper key={video.src}>
+            <VideoThumb
+              src={video.src}
+              type={video.type}
+              muted
+              loop
+              preload="metadata"
+              onMouseOver={e => e.target.play()}
+              onMouseOut={e => e.target.pause()}
+              onClick={() => openModal(idx)}
+              onError={() => handleError(idx)}
+            />
+          </ThumbWrapper>
         )
       )}
       {modal !== null && (
