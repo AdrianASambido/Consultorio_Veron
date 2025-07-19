@@ -20,7 +20,7 @@ const Title = styled.h2`
   color: #1a3c5a;
   margin-bottom: 14px;
   text-align: center;
-  font-size: 2.1rem;
+  font-size: 2.8rem;
   font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
   font-weight: 700;
   letter-spacing: 0.5px;

@@ -55,12 +55,12 @@ const MainLayout = styled.div`
 `;
 /*modifica el cuadro blanco principal (donde está el carrusel, video, servicios, etc.)*/
 const ContentBox = styled.div`
-  background: #fff;
+  background: transparent;
   border-radius: 0;
-  box-shadow: 0 4px 24px rgba(26,60,90,0.10);
-  padding: 32px 0;
+  box-shadow: none;
+  padding: 0;
   margin-top: 0;
-  margin-bottom: 30px;
+  margin-bottom: 0;
   width: 100vw;
   min-width: 100vw;
   max-width: 100vw;
@@ -68,18 +68,25 @@ const ContentBox = styled.div`
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
+`;
+const SectionCard = styled.section`
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(26,60,90,0.10);
+  padding: 32px 24px;
+  margin: 32px 0 0 0;
+  width: 90vw;
+  max-width: 1100px;
+  box-sizing: border-box;
   @media (max-width: 768px) {
-    padding: 16px 0;
+    padding: 18px 6vw;
+    width: 98vw;
   }
 `;
 /*modifica la fila que tiene el carrucel y los videos (lado a lado del descktop) */
 const TopSection = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-  margin-bottom: 30px;
-  justify-content: center;
   width: 100%;
+  margin-bottom: 0;
 `;
 /*modifica el espacio que ocupa el carrucel*/
 const CarouselWrapper = styled.div`
@@ -87,15 +94,16 @@ const CarouselWrapper = styled.div`
 `;
 /*Modifica el contenedor de los videos*/
 const SideBar = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   gap: 24px;
   width: 100%;
-  margin-top: 30px;
+  margin-top: 32px;
   align-items: stretch;
-
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
+  justify-content: center;
+  @media (max-width: 900px) {
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 18px;
   }
 `;
 // Banner llamativo con gradiente y texto
@@ -149,6 +157,16 @@ const BannerSubtitle = styled.h2`
     font-size: 1.1rem;
   }
 `;
+const FooterBar = styled.footer`
+  width: 100vw;
+  background: #3985AF;
+  color: #fff;
+  text-align: center;
+  padding: 32px 0 18px 0;
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  font-size: 1.1rem;
+  margin-top: 48px;
+`;
 
 function App() {
   return (
@@ -163,19 +181,29 @@ function App() {
       <Services />
       <MainLayout>
         <ContentBox>
-          <TopSection>
-            <CarouselWrapper>
-              <Carousel />
-            </CarouselWrapper>
-          </TopSection>
-          <SideBar>
-            <ClientInfo />
-            <Location />
-          </SideBar>
-          <VideoPreview />
-          <Contact />
+          <SectionCard>
+            <TopSection>
+              <CarouselWrapper>
+                <Carousel />
+              </CarouselWrapper>
+            </TopSection>
+          </SectionCard>
+          <SectionCard>
+            <SideBar>
+              <ClientInfo />
+              <Location />
+            </SideBar>
+          </SectionCard>
+          <SectionCard>
+            <VideoPreview />
+          </SectionCard>
+          <SectionCard>
+            <Contact />
+          </SectionCard>
         </ContentBox>
-        <Footer />
+        <FooterBar>
+          <Footer />
+        </FooterBar>
       </MainLayout>
     </>
   );

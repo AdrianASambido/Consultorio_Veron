@@ -1,50 +1,84 @@
 import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
 import emailjs from 'emailjs-com';
+import { FaEnvelope } from 'react-icons/fa';
 
 const Section = styled.section`
-  background: #f4f8fb;
-  border-radius: 10px;
-  padding: 24px 18px;
-  margin: 20px 0;
+  background: #fff;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 40px 24px 32px 24px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
-
-const Title = styled.h2`
-  color: #1a3c5a;
+const ContactIcon = styled(FaEnvelope)`
+  color: #3985AF;
+  font-size: 2.5rem;
   margin-bottom: 12px;
 `;
-
+const Title = styled.h2`
+  color: #1a3c5a;
+  margin-bottom: 8px;
+  font-size: 2rem;
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  font-weight: 800;
+`;
+const Subtitle = styled.p`
+  color: #3985AF;
+  margin-bottom: 18px;
+  font-size: 1.1rem;
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  text-align: center;
+`;
 const Info = styled.div`
   margin-bottom: 14px;
-  color: #222;
+  color: #1a3c5a;
+  font-size: 1.08rem;
+  text-align: center;
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
 `;
-
+const InfoStrong = styled.span`
+  font-weight: 700;
+  color: #1a3c5a;
+`;
 const Form = styled.form`
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 14px;
+  width: 100%;
 `;
-
 const Input = styled.input`
-  padding: 8px;
-  border-radius: 5px;
-  border: 1px solid #b0c4d9;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1.5px solid #b0c4d9;
+  font-size: 1rem;
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
 `;
-
 const TextArea = styled.textarea`
-  padding: 8px;
-  border-radius: 5px;
-  border: 1px solid #b0c4d9;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1.5px solid #b0c4d9;
+  font-size: 1rem;
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
 `;
-
 const Button = styled.button`
-  background: #1a3c5a;
+  background: #3985AF;
   color: #fff;
   border: none;
-  border-radius: 5px;
-  padding: 8px 0;
+  border-radius: 8px;
+  padding: 12px 0;
   cursor: pointer;
   font-weight: bold;
+  font-size: 1.1rem;
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  transition: background 0.2s;
+  &:hover {
+    background: #1a3c5a;
+  }
 `;
 
 const ErrorMessage = styled.p`
@@ -137,10 +171,14 @@ const Contact = () => {
 
   return (
     <Section id="contacto">
+      <ContactIcon />
       <Title>Contacto</Title>
+      <Subtitle>¿Listo para dar el siguiente paso? ¡Escribinos y te ayudamos a transformar tu bienestar!</Subtitle>
       <Info>
-        Email: soma.readaptacion@gmail.com<br/>
-        Teléfonos: (221) 319-7336 - (221) 317-2975 
+        ¿Tenés dudas? Escribinos a:<br/>
+        <InfoStrong>Email:</InfoStrong> soma.readaptacion@gmail.com<br/>
+        <InfoStrong>Teléfonos:</InfoStrong> (221) 319-7336 / (221) 317-2975<br/>
+        <span>¡Estamos para ayudarte!</span>
       </Info>
       <Form ref={form} onSubmit={sendEmail}>
         <Input type="text" name="name" placeholder="Nombre" />
