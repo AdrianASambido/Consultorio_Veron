@@ -48,24 +48,27 @@ const MainLayout = styled.div`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
 `;
 /*modifica el cuadro blanco principal (donde está el carrusel, video, servicios, etc.)*/
 const ContentBox = styled.div`
   background: #fff;
-  border-radius: 18px;
+  border-radius: 0;
   box-shadow: 0 4px 24px rgba(26,60,90,0.10);
-  padding: 32px;
+  padding: 32px 0;
   margin-top: 0;
   margin-bottom: 30px;
-  width: 100%;
-  max-width: 1100px;
-  min-width: 320px;
+  width: 100vw;
+  min-width: 100vw;
+  max-width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
+  @media (max-width: 768px) {
+    padding: 16px 0;
+  }
 `;
 /*modifica la fila que tiene el carrucel y los videos (lado a lado del descktop) */
 const TopSection = styled.div`
@@ -155,6 +158,7 @@ function App() {
         <BannerTitle>Impulsando tu bienestar físico y mental</BannerTitle>
         <BannerSubtitle>Evaluaciones, entrenamiento y salud en un solo lugar</BannerSubtitle>
       </Banner>
+      <Services />
       <MainLayout>
         <ContentBox>
           <TopSection>
@@ -162,7 +166,6 @@ function App() {
               <Carousel />
             </CarouselWrapper>
           </TopSection>
-          <Services />
           <SideBar>
             <ClientInfo />
             <Location />
