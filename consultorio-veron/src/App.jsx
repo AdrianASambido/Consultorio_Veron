@@ -20,10 +20,12 @@ const GlobalStyle = createGlobalStyle`
     min-height: 100vh;
     width: 100vw;
     box-sizing: border-box;
-    display: flex;
+    /* Eliminar centrado global para evitar problemas de alineación */
+    /* display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
+    padding: 0;
   }
 `;
 /*modifica el logo */
@@ -101,7 +103,7 @@ const Banner = styled.div`
   width: 100vw;
   min-width: 100vw;
   margin: 0;
-  padding: 60px 0 80px 0;
+  padding: 100px 32px 80px 32px;
   box-sizing: border-box;
   border-radius: 0;
   display: flex;
@@ -114,7 +116,7 @@ const Banner = styled.div`
   overflow: hidden;
   font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
   @media (max-width: 768px) {
-    padding: 60px 0 40px 0;
+    padding: 60px 16px 40px 16px;
   }
 `;
 const BannerIcon = styled(FaHeartbeat)`
