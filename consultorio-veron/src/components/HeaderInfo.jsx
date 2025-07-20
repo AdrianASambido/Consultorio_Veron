@@ -36,26 +36,27 @@ const NavLink = styled.a`
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 18px;
+  transition: transform 0.3s ease;
 
   &:hover {
-    text-decoration: underline;
+    transform: scale(1.05);
   }
 `;
 
 const SocialLinks = styled.div`
   display: flex;
   gap: 15px;
-  padding-right: 20px;
+  padding: 4px 20px 0px 0px;
 `;
 
 const SocialIconLink = styled.a`
   color: #fff;
   font-size: 24px;
-  transition: color 0.3s;
+  transition: transform 0.3s ease;
 
   &:hover {
-    color: #ccc;
+    transform: scale(1.05);
   }
 `;
 
@@ -65,9 +66,9 @@ const HeaderInfo = () => {
       <Logo src="/imagenes/logo_negro_sin_fondo.png" alt="Logo" />
       <RightNav>
         <NavLinks>
+          <NavLink href="#quienes-somos">¿Quiénes somos?</NavLink>
           <NavLink href="#contacto">Turnos</NavLink>
           <NavLink href="#contacto">Contacto</NavLink>
-          <NavLink href="#quienes-somos">Quiénes somos</NavLink>
         </NavLinks>
         <SocialLinks>
           <SocialIconLink href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">

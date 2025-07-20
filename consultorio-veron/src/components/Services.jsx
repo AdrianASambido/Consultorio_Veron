@@ -14,6 +14,7 @@ const Section = styled.section`
   flex-direction: column;
   align-items: center;
   box-shadow: none;
+  padding-bottom: 90px;
 `;
 
 const Title = styled.h2`

@@ -3,11 +3,11 @@ import styled from 'styled-components';
 import { FaInstagram, FaFacebook, FaLinkedin } from 'react-icons/fa';
 
 const FooterBar = styled.footer`
-  width: 100vw;
+  width: 100%;
   background: #3985AF;
   color: #fff;
   text-align: center;
-  padding: 28px 0 18px 0;
+  padding: 12px 0 12px 0;
   font-size: 1.15rem;
   letter-spacing: 0.5px;
   font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;

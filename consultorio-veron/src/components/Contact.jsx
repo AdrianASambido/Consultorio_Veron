@@ -4,7 +4,7 @@ import emailjs from 'emailjs-com';
 import { FaEnvelope } from 'react-icons/fa';
 
 const Section = styled.section`
-  background: #fff;
+  background: #f4f8fb;
   border-radius: 0;
   box-shadow: none;
   padding: 40px 24px 32px 24px;
