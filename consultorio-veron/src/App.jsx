@@ -18,14 +18,8 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     font-family: 'Segoe UI', Arial, sans-serif;
     min-height: 100vh;
-    width: 100vw;
-    box-sizing: border-box;
-    /* Eliminar centrado global para evitar problemas de alineación */
-    /* display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; */
-    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
   }
 `;
 /*modifica el logo */
@@ -34,8 +28,7 @@ const LogoBox = styled.div`
   justify-content: center;
   align-items: center;
   margin: 0 auto 18px auto;
-  width: 110%;
-  max-width: 1110px;
+  width: 100%;
   box-sizing: border-box;
 `;
 /*modifica el tamaño del logo */
@@ -46,7 +39,7 @@ const LogoImg = styled.img`
 `;
 /*modifica el contenedor principal de toda la app.*/
 const MainLayout = styled.div`
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -61,9 +54,7 @@ const ContentBox = styled.div`
   padding: 0;
   margin-top: 0;
   margin-bottom: 0;
-  width: 100vw;
-  min-width: 100vw;
-  max-width: 100vw;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -75,8 +66,6 @@ const SectionCard = styled.section`
   box-shadow: 0 4px 24px rgba(26,60,90,0.10);
   padding: 32px 24px;
   margin: 32px 0 0 0;
-  width: 90vw;
-  max-width: 1100px;
   box-sizing: border-box;
   @media (max-width: 768px) {
     padding: 18px 6vw;
@@ -108,8 +97,8 @@ const SideBar = styled.div`
 `;
 // Banner llamativo con gradiente y texto
 const Banner = styled.div`
-  width: 100vw;
-  min-width: 100vw;
+  width: 100%;
+  min-width: 0;
   margin: 0;
   padding: 100px 32px 80px 32px;
   box-sizing: border-box;
@@ -126,6 +115,14 @@ const Banner = styled.div`
   @media (max-width: 768px) {
     padding: 60px 16px 40px 16px;
   }
+`;
+const BannerContent = styled.div`
+  max-width: 700px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 const BannerIcon = styled(FaHeartbeat)`
   color: #3985AF;
@@ -158,7 +155,7 @@ const BannerSubtitle = styled.h2`
   }
 `;
 const FooterBar = styled.footer`
-  width: 100vw;
+  width: 100%;
   background: #3985AF;
   color: #fff;
   text-align: center;
@@ -174,9 +171,11 @@ function App() {
       <GlobalStyle />
       <HeaderInfo />
       <Banner>
-        <BannerIcon />
-        <BannerTitle>Impulsando tu bienestar físico y mental</BannerTitle>
-        <BannerSubtitle>Evaluaciones, entrenamiento y salud en un solo lugar</BannerSubtitle>
+        <BannerContent>
+          <BannerIcon />
+          <BannerTitle>Impulsando tu bienestar físico y mental</BannerTitle>
+          <BannerSubtitle>Evaluaciones, entrenamiento y salud en un solo lugar</BannerSubtitle>
+        </BannerContent>
       </Banner>
       <Services />
       <MainLayout>

@@ -6,11 +6,11 @@ import { FaRunning, FaRedo, FaClipboardCheck, FaShieldAlt } from 'react-icons/fa
 const Section = styled.section`
   background: #fff;
   border-radius: 0;
-  padding: 48px 32px 32px 32px;
   margin: 0;
-  width: 100vw;
+  width: 100%;
   color: #3985AF;
   display: flex;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
   box-shadow: none;
@@ -18,7 +18,8 @@ const Section = styled.section`
 
 const Title = styled.h2`
   color: #1a3c5a;
-  margin-bottom: 14px;
+  padding: 10px;
+  margin-bottom: 5px;
   text-align: center;
   font-size: 2.8rem;
   font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
@@ -28,16 +29,17 @@ const Title = styled.h2`
 
 const Subtitle = styled.p`
   text-align: center;
-  margin-bottom: 32px;
-  font-size: 1.08rem;
+  margin-bottom: 100px;
+  font-size: 1.50rem;
   color: #3985AF;
   font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
-  font-weight: 400;
+  font-weight: 450;
 `;
 
 const ServiceItem = styled.div`
   display: flex;
   align-items: flex-start;
+  padding: 0px 50px 0px 50px;
   gap: 18px;
   margin-bottom: 32px;
   max-width: 700px;
@@ -68,6 +70,12 @@ const ServiceDesc = styled.p`
   font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
 `;
 
+const ServicesContent = styled.div`
+  max-width: 700px;
+  margin: 0 auto;
+  width: 100%;
+`;
+
 const services = [
   {
     title: 'Rendimiento',
@@ -93,17 +101,19 @@ const services = [
 
 const Services = () => (
   <Section>
-    <Title>Nuestros Servicios</Title>
-    <Subtitle>Descubrí cómo podemos ayudarte con soluciones a medida.</Subtitle>
-    {services.map((serv, idx) => (
-      <ServiceItem key={idx}>
-        <ServiceIcon>{serv.icon}</ServiceIcon>
-        <ServiceText>
-          <ServiceTitle>{serv.title}</ServiceTitle>
-          <ServiceDesc>{serv.content}</ServiceDesc>
-        </ServiceText>
-      </ServiceItem>
-    ))}
+    <ServicesContent>
+      <Title>Nuestros Servicios</Title>
+      <Subtitle>Descubrí cómo podemos ayudarte con soluciones a medida.</Subtitle>
+      {services.map((serv, idx) => (
+        <ServiceItem key={idx}>
+          <ServiceIcon>{serv.icon}</ServiceIcon>
+          <ServiceText>
+            <ServiceTitle>{serv.title}</ServiceTitle>
+            <ServiceDesc>{serv.content}</ServiceDesc>
+          </ServiceText>
+        </ServiceItem>
+      ))}
+    </ServicesContent>
   </Section>
 );
 
