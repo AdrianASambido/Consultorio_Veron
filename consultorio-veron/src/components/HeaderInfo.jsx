@@ -71,7 +71,7 @@ const HeaderInfo = () => {
           <NavLink href="#contacto">Contacto</NavLink>
         </NavLinks>
         <SocialLinks>
-          <SocialIconLink href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+          <SocialIconLink href="https://www.instagram.com/soma.readaptacion?igsh=MTlna2d2bGRuM3Fyag%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer">
             <FaInstagram />
           </SocialIconLink>
           <SocialIconLink href="https://www.linkedin.com/in/patricio-veron-017479244?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer">
