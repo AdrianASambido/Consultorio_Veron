@@ -1,29 +1,37 @@
-# Consultorio Verón
+# Consultorio Verón - Frontend
 
-Este repositorio contiene el código fuente del sitio web para el Consultorio Verón, especializado en servicios de rehabilitación de lesiones.
+Este proyecto es una aplicación web desarrollada con React y Vite para la gestión y promoción de los servicios del Consultorio Verón.
 
-## Estructura del proyecto
+## Tecnologías principales
 
-- `consultorio-veron/`: Carpeta principal del frontend (React + Vite).
-- `public/`: Imágenes y recursos estáticos.
+- [React](https://react.dev/)
+- [Vite](https://vitejs.dev/)
+- [ESLint](https://eslint.org/)
 
 ## ¿Cómo ejecutar el proyecto?
 
-1. Abre una terminal y navega a la carpeta principal del frontend:
-   ```
-   cd consultorio-veron
-   ```
-2. Instala las dependencias:
+1. Instala las dependencias:
    ```
    npm install
    ```
-3. Inicia el servidor de desarrollo:
+2. Inicia el servidor de desarrollo:
    ```
    npm run dev
    ```
-4. Abre tu navegador en la URL que aparece en la terminal (por defecto: http://localhost:5173).
+3. Abre tu navegador en la URL que aparece en la terminal (por defecto: http://localhost:5173).
+
+## Scripts útiles
+
+- `npm run dev`: Inicia el servidor de desarrollo.
+- `npm run build`: Genera la versión de producción.
+- `npm run preview`: Previsualiza la build de producción.
+- `npm run lint`: Ejecuta el linter para revisar el código.
+
+## Estructura de carpetas
+
+- `src/`: Código fuente de la aplicación.
+- `public/`: Recursos estáticos (imágenes, videos, etc).
 
 ## Notas
 
-- Asegúrate de tener Node.js y npm instalados.
-- Todo el desarrollo y las dependencias están dentro de la carpeta `consultorio-veron`.
+- Si tienes dudas sobre la estructura o el desarrollo, revisa el archivo README en la raíz del repositorio.
