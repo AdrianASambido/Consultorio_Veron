@@ -68,14 +68,6 @@ const Carousel = () => {
 
   useEffect(() => {
     const calculateItemsPerPage = () => {
-      const width = window.innerWidth;
-      let count = 3;
-      if (width < 768) {
-        count = 1;
-      } else if (width < 1024) {
-        count = 2;
-      }
-      // Si hay menos imágenes que el máximo, mostrar solo 1 o 3
       if (images.length < 3) {
         setItemsPerPage(1);
       } else {
