@@ -3,7 +3,7 @@ import Services from '../components/Services';
 import Contact from '../components/Contact';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { FaHeart, FaDumbbell, FaClipboardList, FaBook, FaMapMarkerAlt, FaHeartbeat, FaUserMd, FaEnvelopeOpenText } from 'react-icons/fa';
+import { FaHeart, FaDumbbell, FaClipboardList, FaBook, FaMapMarkerAlt, FaHeartbeat, FaArrowCircleDown } from 'react-icons/fa';
 
 const Banner = styled.section`
   background: #f4f8fb;
@@ -41,10 +41,6 @@ const BannerSubtitle = styled.p`
   align-items: center;
   justify-content: center;
   gap: 0.7rem;
-`;
-const SubtitleIcon = styled(FaUserMd)`
-  color: #246b8f;
-  font-size: 1.7rem;
 `;
 
 const NavSection = styled.section`
@@ -110,13 +106,12 @@ const Line = styled.div`
   border-radius: 2px;
   box-shadow: 0 2px 8px rgba(26,60,90,0.07);
 `;
-const SeparatorIcon = styled(FaEnvelopeOpenText)`
+const SeparatorIcon = styled(FaArrowCircleDown)`
   color: #3985AF;
   font-size: 2.7rem;
   background: #f4f8fb;
   border-radius: 50%;
   padding: 0.4rem;
-  box-shadow: 0 2px 8px rgba(26,60,90,0.07);
 `;
 
 const ContactSection = styled.div`

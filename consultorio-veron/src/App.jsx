@@ -32,6 +32,12 @@ const FooterBar = styled.footer`
   margin-top: 48px;
 `;
 
+const AppContainer = styled.div`
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+`;
+
 function App() {
   return (
     <Router>
