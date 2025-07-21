@@ -4,7 +4,7 @@ import styled from 'styled-components';
 // Importa todas las imágenes de la carpeta images excepto el logo
 const imageModules = import.meta.glob('/public/images/*.{jpg,jpeg,png,gif,webp}', { eager: true });
 const images = Object.keys(imageModules)
-  .filter(path => !path.includes('logo') && !path.includes('cara_cliente'))
+  .filter(path => !path.includes('logo') && !path.includes('textos_presentacion'))
   .map(path => path.replace('/public', ''));
 
 const CarouselContainer = styled.div`
@@ -16,7 +16,7 @@ const CarouselContainer = styled.div`
 
 const SlidesWrapper = styled.div`
   display: flex;
-  height: 325px;
+  height: 380px;
   transition: transform 0.5s ease-in-out;
   transform: translateX(-${props => props.current * 100}%);
 `;
@@ -25,7 +25,7 @@ const Slide = styled.img`
   width: ${props => 100 / props.itemsPerPage}%;
   flex-shrink: 0;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
 `;
 
 const Placeholder = styled.div`
@@ -42,20 +42,23 @@ const Placeholder = styled.div`
 
 const Dots = styled.div`
   position: absolute;
-  bottom: 10px;
+  bottom: 24px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 8px;
+  gap: 14px;
+  z-index: 2;
 `;
 
 const Dot = styled.button`
-  width: 5px;
-  height: 5px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
   border: none;
-  background: ${props => (props.active ? '#1a3c5a' : '#ccc')};
+  background: ${props => (props.active ? '#3985AF' : '#B5E9FC')};
+  border: 2px solid #1a3c5a;
   cursor: pointer;
+  transition: background 0.2s, border 0.2s;
 `;
 
 const Carousel = () => {
@@ -66,10 +69,15 @@ const Carousel = () => {
   useEffect(() => {
     const calculateItemsPerPage = () => {
       const width = window.innerWidth;
+      let count = 3;
       if (width < 768) {
-        setItemsPerPage(1);
+        count = 1;
       } else if (width < 1024) {
-        setItemsPerPage(2);
+        count = 2;
+      }
+      // Si hay menos imágenes que el máximo, mostrar solo 1 o 3
+      if (images.length < 3) {
+        setItemsPerPage(1);
       } else {
         setItemsPerPage(3);
       }
@@ -79,7 +87,7 @@ const Carousel = () => {
     calculateItemsPerPage();
 
     return () => window.removeEventListener('resize', calculateItemsPerPage);
-  }, []);
+  }, [images.length]);
 
   const numPages = Math.ceil(images.length / itemsPerPage);
 
@@ -128,11 +136,6 @@ const Carousel = () => {
           )
         )}
       </SlidesWrapper>
-      <Dots>
-        {Array.from({ length: numPages }).map((_, idx) => (
-          <Dot key={`dot-${idx}`} active={idx === current} onClick={() => setCurrent(idx)} />
-        ))}
-      </Dots>
     </CarouselContainer>
   );
 };

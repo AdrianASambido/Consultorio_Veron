@@ -4,6 +4,7 @@ import Contact from '../components/Contact';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { FaHeart, FaDumbbell, FaClipboardList, FaBook, FaMapMarkerAlt, FaHeartbeat, FaArrowCircleDown } from 'react-icons/fa';
+import Carousel from '../components/Carousel';
 
 const Banner = styled.section`
   background: #f4f8fb;
@@ -137,6 +138,7 @@ export default function Inicio() {
           Impulsando tu bienestar físico y mental. Evaluaciones, entrenamiento y salud en un solo lugar.
         </BannerSubtitle>
       </Banner>
+      <Carousel />
       <Services />
       <NavSection>
         <NavTitle>Explorá más sobre salud y bienestar</NavTitle>
