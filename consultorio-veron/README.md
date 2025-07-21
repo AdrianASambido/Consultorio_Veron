@@ -1,27 +1,37 @@
-# React + Vite
+# Consultorio Verón - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es una aplicación web desarrollada con React y Vite para la gestión y promoción de los servicios del Consultorio Verón.
 
-Currently, two official plugins are available:
+## Tecnologías principales
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [React](https://react.dev/)
+- [Vite](https://vitejs.dev/)
+- [ESLint](https://eslint.org/)
 
-## How to run
+## ¿Cómo ejecutar el proyecto?
 
-1.  Navigate to the project directory:
-    ```
-    cd consultorio-veron
-    ```
-2.  Install dependencies:
-    ```
-    npm install
-    ```
-3.  Run the development server:
-    ```
-    npm run dev
-    ```
+1. Instala las dependencias:
+   ```
+   npm install
+   ```
+2. Inicia el servidor de desarrollo:
+   ```
+   npm run dev
+   ```
+3. Abre tu navegador en la URL que aparece en la terminal (por defecto: http://localhost:5173).
 
-## Expanding the ESLint configuration
+## Scripts útiles
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- `npm run dev`: Inicia el servidor de desarrollo.
+- `npm run build`: Genera la versión de producción.
+- `npm run preview`: Previsualiza la build de producción.
+- `npm run lint`: Ejecuta el linter para revisar el código.
+
+## Estructura de carpetas
+
+- `src/`: Código fuente de la aplicación.
+- `public/`: Recursos estáticos (imágenes, videos, etc).
+
+## Notas
+
+- Si tienes dudas sobre la estructura o el desarrollo, revisa el archivo README en la raíz del repositorio.
