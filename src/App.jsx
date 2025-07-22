@@ -5,7 +5,7 @@ import Inicio from './pages/Inicio';
 import Beneficios from './pages/Beneficios';
 import ImportanciaEntrenamiento from './pages/ImportanciaEntrenamiento';
 import Recomendaciones from './pages/Recomendaciones';
-import Fuentes from './pages/Fuentes';
+import Infancia from './pages/Fuentes';
 import Reserva from './pages/Reserva';
 import Footer from './components/Footer';
 import styled, { createGlobalStyle } from 'styled-components';
@@ -48,7 +48,7 @@ function App() {
         <Route path="/beneficios" element={<Beneficios />} />
         <Route path="/importancia" element={<ImportanciaEntrenamiento />} />
         <Route path="/recomendaciones" element={<Recomendaciones />} />
-        <Route path="/fuentes" element={<Fuentes />} />
+        <Route path="/infancia" element={<Infancia />} />
         <Route path="/reserva" element={<Reserva />} />
       </Routes>
       <FooterBar>

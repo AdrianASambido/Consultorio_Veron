@@ -65,11 +65,6 @@ const HeaderInfo = () => {
     <NavContainer>
       <Logo src="/imagenes/logo_negro_sin_fondo.png" alt="Logo" />
       <RightNav>
-        <NavLinks>
-          <NavLink href="#quienes-somos">¿Quiénes somos?</NavLink>
-          <NavLink href="#contacto">Turnos</NavLink>
-          <NavLink href="#contacto">Contacto</NavLink>
-        </NavLinks>
         <SocialLinks>
           <SocialIconLink href="https://www.instagram.com/soma.readaptacion?igsh=MTlna2d2bGRuM3Fyag%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer">
             <FaInstagram />

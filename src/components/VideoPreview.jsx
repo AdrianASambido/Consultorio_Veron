@@ -12,6 +12,12 @@ const VideoContainer = styled.div`
   display: flex;
   justify-content: space-around;
   width: 100%;
+  flex-wrap: wrap;
+  @media (max-width: 700px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
 `;
 
 const ThumbWrapper = styled.div`
@@ -25,6 +31,12 @@ const ThumbWrapper = styled.div`
   /* Original padding-bottom would be 56.25% (9/16) */
   /* New padding-bottom is 56.25% * 0.85 = 47.8125% */
   padding-bottom: 47.8125%;
+  @media (max-width: 700px) {
+    width: 90vw;
+    min-width: 180px;
+    max-width: 400px;
+    margin: 0 auto 18px auto;
+  }
 `;
 
 const VideoThumb = styled.video`

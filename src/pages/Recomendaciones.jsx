@@ -9,6 +9,7 @@ const PageWrapper = styled.div`
   align-items: center;
   justify-content: center;
   background: #f4f8fb;
+  padding: 1rem;
 `;
 const Card = styled.div`
   background: #fff;
@@ -17,6 +18,10 @@ const Card = styled.div`
   padding: 2.5rem 2rem;
   max-width: 700px;
   width: 100%;
+  @media (max-width: 600px) {
+    padding: 1.2rem 0.5rem;
+    max-width: 98vw;
+  }
 `;
 const Title = styled.h1`
   color: #3985AF;
@@ -24,6 +29,9 @@ const Title = styled.h1`
   font-weight: 900;
   margin-bottom: 1.5rem;
   text-align: center;
+  @media (max-width: 600px) {
+    font-size: 1.6rem;
+  }
 `;
 const List = styled.ul`
   color: #3985AF;
@@ -31,6 +39,10 @@ const List = styled.ul`
   line-height: 1.8;
   margin-bottom: 1.5rem;
   padding-left: 1.2em;
+  @media (max-width: 600px) {
+    font-size: 1rem;
+    padding-left: 1em;
+  }
 `;
 const FloatingHomeButton = styled(Link)`
   position: fixed;

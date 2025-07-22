@@ -12,6 +12,9 @@ const CarouselContainer = styled.div`
   overflow: hidden;
   position: relative;
   background: #eaf2fa;
+  @media (max-width: 600px) {
+    min-height: 180px;
+  }
 `;
 
 const SlidesWrapper = styled.div`
@@ -19,6 +22,9 @@ const SlidesWrapper = styled.div`
   height: 380px;
   transition: transform 0.5s ease-in-out;
   transform: translateX(-${props => props.current * 100}%);
+  @media (max-width: 600px) {
+    height: 180px;
+  }
 `;
 
 const Slide = styled.img`
@@ -26,6 +32,9 @@ const Slide = styled.img`
   flex-shrink: 0;
   height: 100%;
   object-fit: cover;
+  @media (max-width: 600px) {
+    object-fit: contain;
+  }
 `;
 
 const Placeholder = styled.div`
@@ -38,6 +47,9 @@ const Placeholder = styled.div`
   align-items: center;
   justify-content: center;
   font-size: 1.2rem;
+  @media (max-width: 600px) {
+    font-size: 0.9rem;
+  }
 `;
 
 const Dots = styled.div`
@@ -48,6 +60,10 @@ const Dots = styled.div`
   display: flex;
   gap: 14px;
   z-index: 2;
+  @media (max-width: 600px) {
+    bottom: 8px;
+    gap: 7px;
+  }
 `;
 
 const Dot = styled.button`
@@ -59,6 +75,10 @@ const Dot = styled.button`
   border: 2px solid #1a3c5a;
   cursor: pointer;
   transition: background 0.2s, border 0.2s;
+  @media (max-width: 600px) {
+    width: 9px;
+    height: 9px;
+  }
 `;
 
 const Carousel = () => {

@@ -29,7 +29,7 @@ export default function Navbar() {
       <NavLink to="/beneficios">Beneficios</NavLink>
       <NavLink to="/importancia">Importancia</NavLink>
       <NavLink to="/recomendaciones">Recomendaciones</NavLink>
-      <NavLink to="/fuentes">Fuentes</NavLink>
+      <NavLink to="/infancia">Infancia</NavLink>
       <NavLink to="/reserva">Reserva</NavLink>
     </Nav>
   );
