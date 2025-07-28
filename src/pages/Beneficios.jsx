@@ -16,7 +16,7 @@ const Card = styled.div`
   border-radius: 18px;
   box-shadow: 0 4px 24px rgba(26,60,90,0.10);
   padding: 2.5rem 2rem;
-  max-width: 700px;
+  max-width: 800px;
   width: 100%;
   @media (max-width: 600px) {
     padding: 1.2rem 0.5rem;
@@ -45,22 +45,76 @@ const SubTitle = styled.h2`
   }
 `;
 const List = styled.ul`
-  color: #3985AF;
-  font-size: 1.18rem;
+  color: #1a3c5a;
+  font-size: 1.1rem;
   line-height: 1.8;
   margin-bottom: 1.5rem;
-  padding-left: 1.2em;
+  padding-left: 1.5em;
+  list-style-type: '✓ ';
   @media (max-width: 600px) {
     font-size: 1rem;
     padding-left: 1em;
   }
 `;
+const ListItem = styled.li`
+  margin-bottom: 0.7em;
+  color: #3985AF;
+`;
 const Paragraph = styled.p`
+  color: #1a3c5a;
+  font-size: 1.13rem;
+  text-align: center;
+  margin: 1rem 0;
+  @media (max-width: 600px) {
+    font-size: 1rem;
+  }
+`;
+const Blockquote = styled.blockquote`
+  border-left: 4px solid #3985AF;
+  background: #f0f6fa;
+  margin: 2rem 0;
+  padding: 1rem 1.5rem;
+  font-style: italic;
   color: #1a3c5a;
   font-size: 1.13rem;
   text-align: center;
   @media (max-width: 600px) {
     font-size: 1rem;
+    padding: 0.7rem 0.7rem;
+  }
+`;
+const Highlight = styled.span`
+  font-weight: bold;
+  color: #246b8f;
+`;
+const Separator = styled.hr`
+  border: none;
+  border-top: 2px solid #e0e7ef;
+  margin: 2.2rem 0;
+`;
+
+const TipsGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+  margin-bottom: 1.5rem;
+  @media (max-width: 700px) {
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+  }
+`;
+
+const TipCard = styled.div`
+  background: #f4f8fb;
+  border-left: 4px solid #3985AF;
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  color: #1a3c5a;
+  font-size: 1.05rem;
+  box-shadow: 0 2px 8px rgba(26,60,90,0.04);
+  @media (max-width: 600px) {
+    font-size: 0.97rem;
+    padding: 0.7rem 0.7rem;
   }
 `;
 const FloatingHomeButton = styled(Link)`
@@ -89,18 +143,45 @@ export default function Beneficios() {
   return (
     <PageWrapper>
       <Card>
-        <Title>Beneficios para tu cuerpo</Title>
+        <Title>Beneficios del Ejercicio</Title>
+        <Paragraph>
+          El ejercicio físico regular es una de las mejores inversiones para tu salud física y mental. Aquí te mostramos por qué.
+        </Paragraph>
+        <Separator />
+        <SubTitle>5 Beneficios Clave del Ejercicio</SubTitle>
+        <TipsGrid>
+          <TipCard>
+            <Highlight>Mejora la salud cardiovascular y metabólica:</Highlight> ayudando a controlar la presión arterial y el azúcar en sangre.
+          </TipCard>
+          <TipCard>
+            <Highlight>Aumenta la fuerza, la postura y el control corporal:</Highlight> reduciendo dolores por malas posiciones o sedentarismo, como la lumbalgia y la cervicalgia.
+          </TipCard>
+          <TipCard>
+            <Highlight>Favorece la salud mental:</Highlight> reduciendo el estrés, la ansiedad y mejorando el estado de ánimo.
+          </TipCard>
+          <TipCard>
+            <Highlight>Aumenta la energía y la productividad diaria:</Highlight> mejorando el rendimiento físico y cognitivo.
+          </TipCard>
+          <TipCard>
+            <Highlight>Mejora la calidad del sueño:</Highlight> favoreciendo un descanso más profundo y reparador.
+          </TipCard>
+        </TipsGrid>
+        <Separator />
+        <Blockquote>
+          "¿Por qué entrenar si estás sano? Porque podés estar mejor. En SOMA creemos que el movimiento es una herramienta poderosa para prevenir, fortalecer y transformar tu calidad de vida."
+        </Blockquote>
+        <SubTitle>Experimentá con el entrenamiento regular</SubTitle>
         <List>
-          <li>Huesos más fuertes → estimula la formación ósea y previene osteoporosis.</li>
-          <li>Mejor equilibrio → activa reflejos posturales y reduce el riesgo de caídas.</li>
-          <li>Control de azúcar → mejora la sensibilidad a la insulina, útil frente a diabetes tipo II.</li>
+          <ListItem>Más fuerza y energía para tu día a día.</ListItem>
+          <ListItem>Menos estrés y mejor descanso.</ListItem>
+          <ListItem>Huesos y articulaciones más sanas.</ListItem>
+          <ListItem>Mejor postura y menos dolor.</ListItem>
+          <ListItem>Mente más clara y positiva.</ListItem>
         </List>
-        <SubTitle>Cómo te ayuda tu corazón y mente</SubTitle>
-        <Paragraph>El ejercicio físico regular mejora la salud cardiovascular y contribuye a estabilizar la presión arterial. Además, favorece la liberación de endorfinas, lo que ayuda a mejorar el estado de ánimo y disminuir el estrés.</Paragraph>
         <FloatingHomeButton to="/" title="Volver al inicio">
           <FaHome />
         </FloatingHomeButton>
       </Card>
     </PageWrapper>
   );
-} 
+}

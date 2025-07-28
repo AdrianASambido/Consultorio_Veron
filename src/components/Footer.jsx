@@ -31,10 +31,10 @@ const Footer = () => (
   <FooterBar>
     © 2024 AdoGe Innovations. Todos los derechos reservados.<br/>
     <SocialLinks>
-      <SocialIcon href="#" aria-label="Instagram"><FaInstagram /></SocialIcon>
-      <SocialIcon href="#" aria-label="LinkedIn"><FaLinkedin /></SocialIcon>
+      <SocialIcon href="https://www.instagram.com/soma.readaptacion?igsh=MTlna2d2bGRuM3Fyag%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><FaInstagram /></SocialIcon>
+      <SocialIcon href="https://www.linkedin.com/in/patricio-veron-017479244?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><FaLinkedin /></SocialIcon>
     </SocialLinks>
   </FooterBar>
 );
 
-export default Footer; 
+export default Footer;
