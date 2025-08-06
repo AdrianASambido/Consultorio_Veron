@@ -146,7 +146,7 @@ export default function Inicio() {
         <NavButtons>
           <NavButton to="/beneficios"><FaHeart /> Beneficios</NavButton>
           <NavButton to="/importancia"><FaDumbbell /> Importancia</NavButton>
-          <NavButton to="/quienes-somos"><FaClipboardList /> ¿Quienes somos?</NavButton>
+          <NavButton to="/quienes-somos"><FaClipboardList /> Conocenos</NavButton>
           <NavButton to="/infancia"><FaBook /> Infancia</NavButton>
           <NavButton to="/reserva"><FaMapMarkerAlt /> Reserva</NavButton>
         </NavButtons>
