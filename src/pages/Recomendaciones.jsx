@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { FaHome } from 'react-icons/fa';
+import Professor from '../components/Professor';
 
 const PageWrapper = styled.div`
   min-height: 80vh;
@@ -16,7 +17,7 @@ const Card = styled.div`
   border-radius: 18px;
   box-shadow: 0 4px 24px rgba(26,60,90,0.10);
   padding: 2.5rem 2rem;
-  max-width: 700px;
+  max-width: 800px;
   width: 100%;
   @media (max-width: 600px) {
     padding: 1.2rem 0.5rem;
@@ -33,17 +34,7 @@ const Title = styled.h1`
     font-size: 1.6rem;
   }
 `;
-const List = styled.ul`
-  color: #3985AF;
-  font-size: 1.18rem;
-  line-height: 1.8;
-  margin-bottom: 1.5rem;
-  padding-left: 1.2em;
-  @media (max-width: 600px) {
-    font-size: 1rem;
-    padding-left: 1em;
-  }
-`;
+
 const FloatingHomeButton = styled(Link)`
   position: fixed;
   bottom: 32px;
@@ -66,20 +57,16 @@ const FloatingHomeButton = styled(Link)`
   }
 `;
 
-export default function Recomendaciones() {
+export default function QuienesSomos() {
   return (
     <PageWrapper>
       <Card>
-        <Title>Recomendaciones SOMA</Title>
-        <List>
-          <li>2 a 3 veces por semana: Ejercicios de fuerza, adaptados al nivel del cada persona</li>
-          <li>Trabajo de equilibrio y control postural, orientado a la autonomía y a la prevención de caídas.</li>
-          <li>Ejercicios de locomoción controlada, con patrones de marcha y desplazamientos en diferentes direcciones y contextos.</li>
-        </List>
+        <Title>Conocenos</Title>
+        <Professor />
         <FloatingHomeButton to="/" title="Volver al inicio">
           <FaHome />
         </FloatingHomeButton>
       </Card>
     </PageWrapper>
   );
-} 
+}
